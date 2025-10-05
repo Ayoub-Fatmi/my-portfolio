@@ -58,16 +58,58 @@
     /* light gray text */
     --card: 222.2 84% 8%;
   
-    /* Tech colors — HSL format (no commas) */
-    --color-Angular: 134 70% 48%;
-    --color-nextjs: 30 10% 90%;
-    --color-typescript: 204 94% 40%;
-    --color-node: 100 60% 35%;
-    --color-aws: 210 80% 40%;
-    --color-mongodb: 32 90% 45%;
-    --color-tailwind: 218 94% 45%;
-    --color-docker: 28 90% 50%;
-    --color-kubernetes: 260 70% 45%;
+    /* Your tech colors — HSL format (no commas) */
+      --color-arduino: 0 0% 60%;
+      /* Gray (Arduino logo is gray) */
+      --color-reactjs: 90 100% 35%;
+      /* React green */
+      --color-django: 30 100% 45%;
+      /* Django red-orange */
+      --color-dht11: 200 20% 50%;
+      /* Sensor gray-blue */
+      --color-mqtt: 260 70% 50%;
+      /* Purple (common in IoT) */
+      --color-reverse-proxy: 220 15% 60%;
+      /* Neutral blue-gray */
+      --color-sqlite: 30 80% 45%;
+      /* Amber/orange */
+    
+      --color-angular: 204 100% 40%;
+      /* Angular red */
+      --color-dotnet: 120 100% 25%;
+      /* .NET green */
+      --color-sql-server: 200 100% 35%;
+      /* SQL Server blue */
+      --color-rest-api: 60 100% 50%;
+      /* Gold/yellow (generic API) */
+      --color-tailwind: 218 94% 45%;
+      /* Tailwind blue */
+    
+      --color-nextjs: 0 0% 100%;
+      /* Next.js black (white in dark mode) */
+      --color-golang: 90 100% 25%;
+      /* Go green */
+      --color-scylladb: 300 70% 50%;
+      /* ScyllaDB purple */
+      --color-docker: 28 90% 50%;
+      /* Docker orange */
+      --color-2fa: 180 100% 35%;
+      /* Cyan (security = trust) */
+      --color-kafka: 0 80% 50%;
+      /* Kafka red */
+      --color-elasticsearch: 0 0% 80%;
+      /* Light gray (ES logo) */
+    
+      --color-spartacus: 330 100% 45%;
+      /* Spartacus pink/purple */
+      --color-git: 200 100% 40%;
+      /* Git blue */
+      --color-scrum: 45 100% 50%;
+      /* Scrum amber */
+      --color-typescript: 204 94% 40%;
+      /* TypeScript blue */
+      --color-storybook: 100 70% 45%;
+
   }
 }
 

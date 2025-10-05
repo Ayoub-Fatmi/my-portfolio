@@ -97,6 +97,8 @@ export default function ExperienceDialog({
                         <Image
                           src={img}
                           alt={`${title} ${idx + 1}`}
+                          width={128} // w-32 → 32 * 4 = 128
+                          height={128} // h-32 → 32 * 4 = 128
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             (e.currentTarget as HTMLImageElement).src =

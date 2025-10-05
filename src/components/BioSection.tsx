@@ -14,8 +14,10 @@ export default function BioSection() {
           <div className="relative flex-shrink-0">
             <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-primary/30 bg-muted">
               <Image
-                src="/PicCV.png" // ← path to your image
+                src="/PicCV.png"
                 alt="Fatmi Ayoub"
+                width={192} // md:w-48 → 48 * 4 = 192px
+                height={192}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -62,7 +64,7 @@ export default function BioSection() {
 
             <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
               <Button asChild size="lg" className="px-8">
-                <Link href="#experience">View My Work</Link>
+                <Link href="#experience">Découvrir mon travail</Link>
               </Button>
               <Button
                 asChild
@@ -70,7 +72,7 @@ export default function BioSection() {
                 variant="outline"
                 className="px-8 border-neutral-700 hover:bg-neutral-800/50"
               >
-                <Link href="#contact">Get In Touch</Link>
+                <Link href="#contact">Contactez-moi</Link>
               </Button>
             </div>
           </div>

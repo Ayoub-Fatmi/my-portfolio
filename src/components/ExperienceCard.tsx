@@ -55,6 +55,8 @@ export default function ExperienceCard({
                     <Image
                       src={images[0]}
                       alt={title}
+                      width={288} // w-full in 1/3 of max-w-6xl (~960px/3 = 320px → use 288 for safety)
+                      height={144} // h-36 → 36 * 4 = 144px
                       className="object-cover w-full h-full"
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).src =

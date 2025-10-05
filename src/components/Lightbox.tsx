@@ -64,12 +64,13 @@ export default function Lightbox({
             <Image
               src={images[currentIndex]}
               alt={`Project view ${currentIndex + 1}`}
+              width={800} // or your max expected width
+              height={600} // maintain aspect ratio
               className="w-full max-h-[80vh] object-contain rounded"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = "/images/placeholder.png";
               }}
             />
-
             {images.length > 1 && (
               <>
                 <button

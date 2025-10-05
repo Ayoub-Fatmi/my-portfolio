@@ -70,14 +70,14 @@ export default function Home() {
         "Sqlite",
       ],
       images: [
-        "iot (2).png",
-        "iot (3).png",
-        "iot (4).png",
-        "iot (5).png",
-        "iot (6).png",
-        "iot (7).png",
-        "iot (8).png",
-        "iot (1).png",
+        "/iot (2).png",
+        "/iot (3).png",
+        "/iot (4).png",
+        "/iot (5).png",
+        "/iot (6).png",
+        "/iot (7).png",
+        "/iot (8).png",
+        "/iot (1).png",
       ],
     },
   ];
@@ -89,7 +89,7 @@ export default function Home() {
       <section className="py-16 px-4" id="experience">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-black dark:text-white">
-            Experience & Projects
+            Expériences & Projets
           </h2>
 
           {/* Grid container */}
