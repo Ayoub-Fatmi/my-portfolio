@@ -1,9 +1,3 @@
-## 📸 Aperçu du projet
-
-Voici un aperçu de l'application :
-
-![Aperçu du projet](./public/potfolio_final.png)
-
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
