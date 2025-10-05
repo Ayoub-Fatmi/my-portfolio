@@ -26,18 +26,19 @@ export default function BioSection() {
           </div>
 
           {/* Bio Content */}
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+          <div className="space-y-5 text-center md:text-left w-full">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-400">
                 Ayoub Fatmi
               </span>
             </h1>
 
-            <h2 className="text-xl md:text-2xl text-neutral-400 font-medium">
-              Ingenieur Informatique
+            <h2 className="text-lg sm:text-xl md:text-2xl text-neutral-400 font-medium">
+              Ingénieur Informatique
             </h2>
 
-            <p className="text-base md:text-base text-neutral-300 max-w-2xl leading-relaxed text-justify">
+            {/* Desktop: full bio */}
+            <p className="hidden md:block text-base text-neutral-300 max-w-2xl leading-relaxed text-justify">
               Je suis Fatmi Ayoub,{" "}
               <span className="text-primary font-medium">
                 diplômé en génie informatique
@@ -56,21 +57,49 @@ export default function BioSection() {
               contribuer à des projets concrets.
             </p>
 
-            <p className="text-sm text-neutral-400 text-justify">
+            {/* Mobile: split bio */}
+            <div className="md:hidden space-y-4">
+              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+                Diplômé en génie informatique et actuellement en{" "}
+                <span className="text-primary font-medium">
+                  Master 2 ILIADE
+                </span>{" "}
+                à l’UBO (France), je conçois et développe des applications web
+                et desktop — de l’architecture à la production — avec Java,
+                Angular, .NET et Python.
+              </p>
+
+              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+                À la recherche d’un{" "}
+                <span className="text-primary font-medium">
+                  stage de fin d’études
+                </span>{" "}
+                pour relever de nouveaux défis et contribuer à des projets
+                concrets.
+              </p>
+            </div>
+
+            {/* Football sentence — visible on all, but styled differently */}
+            <p className="text-sm text-neutral-400 md:text-justify text-center">
               En dehors du code, on me retrouve souvent en train de jouer au
               football, ce qui m’a appris la coopération et la persévérance, des
               valeurs que j’applique dans mon travail.
             </p>
 
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
-              <Button asChild size="lg" className="px-8">
+            {/* Buttons */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
+              <Button
+                asChild
+                size="lg"
+                className="px-6 sm:px-8 w-full sm:w-auto"
+              >
                 <Link href="#experience">Découvrir mon travail</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="px-8 border-neutral-700 hover:bg-neutral-800/50"
+                className="px-6 sm:px-8 w-full sm:w-auto border-neutral-700 hover:bg-neutral-800/50"
               >
                 <Link href="#contact">Contactez-moi</Link>
               </Button>
