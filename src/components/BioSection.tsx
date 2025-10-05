@@ -3,6 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BioSection() {
   return (
@@ -12,7 +13,7 @@ export default function BioSection() {
           {/* Profile Image */}
           <div className="relative flex-shrink-0">
             <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-primary/30 bg-muted">
-              <img
+              <Image
                 src="/PicCV.png" // ← path to your image
                 alt="Fatmi Ayoub"
                 className="w-full h-full object-cover"

@@ -8,7 +8,7 @@ export default function ContactSection() {
   return (
     <section className="py-16" id="contact">
       <div className="container mx-auto px-4 max-w-4xl text-center">
-        <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
+        <h2 className="text-3xl font-bold mb-6">{"Let's Connect"}</h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
           Interested in working together? Feel free to reach out through
           LinkedIn or WhatsApp!

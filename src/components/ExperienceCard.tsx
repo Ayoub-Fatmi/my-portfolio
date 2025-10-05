@@ -6,6 +6,7 @@ import { useState } from "react";
 import Lightbox from "./Lightbox";
 import ExperienceDialog from "./ExperienceDialog";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import Image from "next/image";
 
 interface ExperienceProps {
   title: string;
@@ -25,13 +26,8 @@ export default function ExperienceCard({
   images = [],
 }: ExperienceProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [lightboxIndex] = useState(0);
   const [dialogOpen, setDialogOpen] = useState(false);
-
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
 
   return (
     <>
@@ -56,7 +52,7 @@ export default function ExperienceCard({
               <div className="hidden md:block w-1/3 flex-shrink-0">
                 {images.length > 0 ? (
                   <div className="w-full h-36 rounded-lg overflow-hidden border border-border">
-                    <img
+                    <Image
                       src={images[0]}
                       alt={title}
                       className="object-cover w-full h-full"

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TechBadge from "./TechBadge";
 import Lightbox from "./Lightbox";
+import Image from "next/image";
 
 interface ExperienceDialogProps {
   isOpen: boolean;
@@ -72,7 +73,9 @@ export default function ExperienceDialog({
             <div className="p-6 sm:p-8">
               {/* Header */}
               <div className="mb-6">
-                <h2 className="text-2xl font-bold text-black dark:text-white">{title}</h2>
+                <h2 className="text-2xl font-bold text-black dark:text-white">
+                  {title}
+                </h2>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">
                   {company} • {period}
                 </p>
@@ -91,12 +94,13 @@ export default function ExperienceDialog({
                         }}
                         className="flex-shrink-0 w-32 h-32 rounded-lg overflow-hidden border border-border cursor-pointer"
                       >
-                        <img
+                        <Image
                           src={img}
                           alt={`${title} ${idx + 1}`}
                           className="w-full h-full object-cover"
                           onError={(e) => {
-                            (e.currentTarget as HTMLImageElement).src = "https://via.placeholder.com/300?text=Preview+Not+Available";
+                            (e.currentTarget as HTMLImageElement).src =
+                              "https://via.placeholder.com/300?text=Preview+Not+Available";
                           }}
                         />
                       </div>
@@ -128,7 +132,9 @@ export default function ExperienceDialog({
 
       {/* Lightbox for full-size image viewing */}
       <Lightbox
-        images={images.length > 0 ? images : ["https://via.placeholder.com/800x600"]}
+        images={
+          images.length > 0 ? images : ["https://via.placeholder.com/800x600"]
+        }
         startIndex={lightboxIndex}
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}

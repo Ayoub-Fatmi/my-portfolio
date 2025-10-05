@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface LightboxProps {
   images: string[];
@@ -10,7 +11,12 @@ interface LightboxProps {
   onClose: () => void;
 }
 
-export default function Lightbox({ images, startIndex, isOpen, onClose }: LightboxProps) {
+export default function Lightbox({
+  images,
+  startIndex,
+  isOpen,
+  onClose,
+}: LightboxProps) {
   const [currentIndex, setCurrentIndex] = useState(startIndex);
 
   useEffect(() => {
@@ -21,8 +27,10 @@ export default function Lightbox({ images, startIndex, isOpen, onClose }: Lightb
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isOpen) return;
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") setCurrentIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
-      if (e.key === "ArrowRight") setCurrentIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+      if (e.key === "ArrowLeft")
+        setCurrentIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
+      if (e.key === "ArrowRight")
+        setCurrentIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -40,7 +48,10 @@ export default function Lightbox({ images, startIndex, isOpen, onClose }: Lightb
         onClick={onClose}
         className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
       >
-        <div className="relative max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="relative max-w-6xl w-full"
+          onClick={(e) => e.stopPropagation()}
+        >
           <button
             onClick={onClose}
             className="absolute -top-12 right-0 text-white text-2xl hover:text-primary"
@@ -50,7 +61,7 @@ export default function Lightbox({ images, startIndex, isOpen, onClose }: Lightb
           </button>
 
           <div className="relative">
-            <img
+            <Image
               src={images[currentIndex]}
               alt={`Project view ${currentIndex + 1}`}
               className="w-full max-h-[80vh] object-contain rounded"
@@ -62,14 +73,22 @@ export default function Lightbox({ images, startIndex, isOpen, onClose }: Lightb
             {images.length > 1 && (
               <>
                 <button
-                  onClick={() => setCurrentIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1))}
+                  onClick={() =>
+                    setCurrentIndex((prev) =>
+                      prev > 0 ? prev - 1 : images.length - 1
+                    )
+                  }
                   className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
                   aria-label="Previous image"
                 >
                   ‹
                 </button>
                 <button
-                  onClick={() => setCurrentIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0))}
+                  onClick={() =>
+                    setCurrentIndex((prev) =>
+                      prev < images.length - 1 ? prev + 1 : 0
+                    )
+                  }
                   className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70"
                   aria-label="Next image"
                 >

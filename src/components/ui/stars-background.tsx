@@ -26,16 +26,17 @@ interface StarBackgroundProps {
 }
 
 export const StarsBackground: React.FC<StarBackgroundProps> = ({
-  starDensity = 0.00015,
+  starDensity = 0.001,
   allStarsTwinkle = true,
-  twinkleProbability = 0.7,
+  twinkleProbability = 0.9,
   minTwinkleSpeed = 0.5,
   maxTwinkleSpeed = 1,
   className,
 }) => {
   const [stars, setStars] = useState<StarProps[]>([]);
-  const canvasRef: RefObject<HTMLCanvasElement> =
-    useRef<HTMLCanvasElement>(null);
+  const canvasRef: RefObject<HTMLCanvasElement> = useRef<HTMLCanvasElement>(
+    null!
+  );
 
   const generateStars = useCallback(
     (width: number, height: number): StarProps[] => {
@@ -133,7 +134,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
       cancelAnimationFrame(animationFrameId);
     };
   }, [stars]);
-
+  if (!canvasRef) return;
   return (
     <canvas
       ref={canvasRef}
